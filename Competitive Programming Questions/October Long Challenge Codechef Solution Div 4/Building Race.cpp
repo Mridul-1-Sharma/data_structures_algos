@@ -1,4 +1,4 @@
-//Link To The Problem - https://www.codechef.com/submit/BUILDINGRACE
+//Link To The Problem - https://www.codechef.com/OCT221D/problems/BUILDINGRACE
 #include <bits/stdc++.h>
 using namespace std;
 
