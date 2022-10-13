@@ -1,4 +1,4 @@
-//Link To The Problem - https://www.codechef.com/submit/SINGLEOP2
+//Link To The Problem - https://www.codechef.com/OCT221D/problems/SINGLEOP2
 
 #include <bits/stdc++.h>
 using namespace std;
