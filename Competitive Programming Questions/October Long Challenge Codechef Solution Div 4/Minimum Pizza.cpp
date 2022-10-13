@@ -1,4 +1,4 @@
-//Link To The Problem - https://www.codechef.com/submit/MINPIZZA
+//Link To The Problem - https://www.codechef.com/OCT221D/problems/MINPIZZA
 
 #include <iostream>
 using namespace std;
