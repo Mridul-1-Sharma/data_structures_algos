@@ -1,4 +1,4 @@
-//Link To The Problem - https://www.codechef.com/submit/PODIUM
+//Link To The Problem - https://www.codechef.com/OCT221D/problems/PODIUM
 #include <iostream>
 using namespace std;
 
