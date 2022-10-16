@@ -9,8 +9,8 @@ string check_Upper_Lower(string& str);
 int main()
 {
 	string test = "How are You. toDaY, it IS a Good daY. I hope you can do wELL in HacktOberFest";
-
-	cout << test << endl;
+  
+	cout << check_Upper_Lower(test) << endl;
 }
 
 string check_Upper_Lower(string& str)
@@ -24,7 +24,7 @@ string check_Upper_Lower(string& str)
 				str[i] = static_cast<char>(ascii + 32);
 			
 			if (ascii >= 97 && ascii <= 122)
-				str[i] = static_cast<char>(ascii + 32);
+				str[i] = static_cast<char>(ascii - 32);
 	}
 
 	return str;
