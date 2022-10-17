@@ -1,5 +1,27 @@
-//Given a pointer to the head node of a linked list, the task is to reverse the linked list.
+//Problem Statement :
 
+//Given a pointer to the head node of a linked list, the task is to reverse the linked list. We need to reverse the list by changing the links between nodes.
+
+//Approach :The idea is to use three pointers curr, prev, and next to keep track of nodes to update reverse links.
+
+
+/*Examples: 
+
+Input: Head of following linked list 
+1->2->3->4->NULL 
+Output: Linked list should be changed to, 
+4->3->2->1->NULL
+
+Input: Head of following linked list 
+1->2->3->4->5->NULL 
+Output: Linked list should be changed to, 
+5->4->3->2->1->NULL*/
+
+/* Code Output :
+Given linked list
+85 15 4 20 
+Reversed linked list 
+20 4 15 85 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -75,3 +97,6 @@ int main()
     ll.print();
     return 0;
 }
+
+//Time Complexity: O(N), Traversing over the linked list of size N. 
+//Auxiliary Space: O(1)
