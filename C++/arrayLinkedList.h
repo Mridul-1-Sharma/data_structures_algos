@@ -1,0 +1,91 @@
+#include<iostream>
+using namespace std;
+
+// implement a linked list based on an dynamic array
+// setup the arrayList class with template, so we can change any data type that we want
+
+template<typename T>
+class arrayList 
+{ 
+ private: 
+    int front; 
+    int size;
+    T* arrList; 
+ 
+ public:
+    arrayList(const int& size);
+
+    bool empty() const;          // check if the list is empty
+    int getSize() const;         // return the number of the elems in list
+    T head() const;              // return the head
+     
+    void insertFront(const T& e);   // insert new head
+    void removeFront();             // remove head
+
+    void printInfo() const; 
+
+ private:
+    void resize();               // resize the array when out of size
+};
+
+template<typename T>
+arrayList<T>::arrayList(const int& size)
+{
+   front = 0;
+   this->size = size;
+   arrList = new T[size];
+}
+
+template<typename T>
+bool arrayList<T>::empty() const
+{
+   return front == 0;
+}
+
+template<typename T>
+int arrayList<T>::getSize() const
+{
+   return front;
+}
+
+template<typename T>
+T arrayList<T>::head() const
+{
+   return arrList[front - 1];
+}
+
+template<typename T>
+void arrayList<T>::insertFront(const T& e) 
+{
+  if (front >= size)
+      resize();
+   
+   arrList[front++] = e; 
+}
+
+template<typename T>
+void arrayList<T>::removeFront() 
+{
+   front--; 
+}
+
+template<typename T>
+void arrayList<T>::resize() 
+{
+   size += 10;
+   T* temp = new T[size];
+
+   for (int i = 0; i <= front; i++)
+      temp[i] = arrList[i];
+   
+   arrList = temp;
+}
+
+template<typename T>
+void arrayList<T>::printInfo() const 
+{
+   for (int i = front - 1; i >= 0; i--)
+      cout << arrList[i] << " ";
+   
+   cout << endl;
+}
