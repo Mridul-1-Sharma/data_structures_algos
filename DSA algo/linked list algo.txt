@@ -1,0 +1,190 @@
+[2]Algorithm for Linked list operations:−
+
+-> To create a singly linked list:
+
+//sample code:
+Struct Node
+{
+    int data;
+    Node* next;
+};
+
+
+
+-> To create a doubly linked list:
+
+//sample code:
+Struct Node
+{
+    int data;
+    Node* next;
+    Node* prev;
+};
+
+->Travarsal in Linked list:
+steps-
+1.First, initialize a Node variable, say ‘temp’ pointing to the head of the linked list.
+2.Iterate till the ‘temp’ will not become NULL.
+3.Print the node’s data.
+4.Increment ‘temp’ to temp’s next.
+
+
+   //sample code:
+
+    void traversal(Node* head) {
+    Node* temp = head;
+    while(temp != NULL)
+    {
+        cout<<(temp->data);
+        temp = temp->next;
+    }
+}
+
+
+->Insertion in Linked list:
+
+There are three ways the insertion operation is done:
+a.At the beginning of the linked list.
+b.At the end of the linked list.
+c.After after a particular node.
+
+1)Insertion at the Beginning – 
+
+ //sample code:
+
+Node* insertAtBegin(Node* head, int x)
+{
+
+    // creation of a new node of linked list.
+    Node* newNode = new Node(x)
+
+    // checking if the linked list is empty.
+    if(head == NULL)         
+    return newNode;
+
+    // insertion of the node at the beginning.
+    else     
+    {
+        newNode->next = head;
+        return newNode;
+    }
+}
+
+2)Insertion at the end – 
+
+ //sample code:
+
+Node* insertAtEnd(Node* head, int x)
+{
+
+    // If the list is empty.
+    if( head == NULL )     
+    {
+        Node* newNode = new Node(x);
+        head = newNode;
+        return head;
+    }
+    Node* temp = head;
+
+    // Traversing the list till the last node
+    while(temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    Node* newNode = new Node(x);
+    temp->next = newNode;
+    return head;
+}
+
+
+3)Insertion after a particular node –
+
+ //sample code:
+
+void insertAfterNode(Node* givenNode, int x)
+{
+    Node* newNode = new Node(x);
+   
+    newNode->next = givenNode->next;
+    givenNode->next = newNode;
+}
+
+
+
+
+ -> deletion in linked list:
+
+steps:
+1.Traversing to the previous node of the node to be deleted.
+2.Changing the next pointer of that previous node to point to the address of the next node of the node to be deleted.
+3.Freeing up the memory which is occupied by the node to be deleted.
+
+
+ //sample code:
+
+Node deleteNode(Node* head, Node* toBeDeleted)
+{
+
+    // If the node to be deleted is the head node.
+    if(head == toBeDeleted)
+    {
+        return head.next;
+    }
+
+    // temp is the traversing node.
+    Node* temp = head;
+   
+    while( temp->next != NULL )
+    {
+
+        // Searching for the previous node of the node to be deleted.
+        if(temp->next == toBeDeleted)
+        {
+            temp->next = temp->next->next;
+
+            // Freeing up the memory of the node to be deleted.
+            return head;
+        }
+        temp = temp->next;
+    }
+
+    // If no node matches in the Linked List.
+    return head;
+}
+
+
+
+ -> Updation in linked list:
+
+This operations in linked lists is use to replace the data part of 
+the required node with the given data.
+
+ //sample code:
+
+void updateNode(Node* head, int value, int newValue)
+{
+
+    // temp is the traversing node
+    Node* temp = head;
+    while(temp != NULL)
+    {
+
+        // If the node matches the given node to be updated.
+        if( temp->data == val)
+        {
+
+            // Updating the data part of the node with the new value.
+            temp->data = newVal;
+            return;
+        }
+        temp = temp->next;
+    }
+}
+
+
+
+
+
+
+
+

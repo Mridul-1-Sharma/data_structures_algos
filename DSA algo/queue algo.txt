@@ -1,0 +1,61 @@
+[3]Algorithm for Queue operations:
+
+
+
+ -> Enqueue in Queue:
+
+Steps−
+1. Check if the queue is full.
+
+2. If the queue is full, produce overflow error and exit.
+
+3. If the queue is not full, increment rear pointer to point the next empty space.
+
+4.Add data element to the queue location, where the rear is pointing.
+
+5. return success.
+
+ //sample code:
+
+procedure enqueue(data)      
+   
+   if queue is full
+      return overflow
+   endif
+   
+   rear ← rear + 1
+   queue[rear] ← data
+   return true
+   
+end 
+
+
+ -> Dequeue in Queue:
+
+ Steps−
+
+1.Check if the queue is empty.
+
+2.If the queue is empty, produce underflow error and exit.
+
+3.If the queue is not empty, access the data where front is pointing.
+
+4.Increment front pointer to point to the next available data element.
+
+5.Return success.
+
+
+ //sample code:
+
+procedure dequeue
+   
+   if queue is empty
+      return underflow
+   end if
+
+   data = queue[front]
+   front ← front + 1
+   return true
+
+end 
+

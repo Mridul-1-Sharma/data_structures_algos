@@ -1,0 +1,37 @@
+
+[1]Algorithm for stack operations:
+
+->Algorithm for Push operation:−
+
+  begin procedure push: stack, data
+
+   
+   //sample code:
+   
+   if stack is full
+      return null
+   endif
+   
+   top ← top + 1
+   stack[top] ← data
+
+  end 
+
+->Algorithm for Pop operation :−
+
+  begin procedure pop: stack
+
+   //sample code:
+ 
+    if stack is empty
+       return null
+     endif
+   
+    data ← stack[top]
+    top ← top - 1
+    return data
+
+  end 
+
+
+
