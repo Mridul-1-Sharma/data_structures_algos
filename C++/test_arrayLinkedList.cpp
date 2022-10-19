@@ -22,5 +22,11 @@ int main(int argc, char const *argv[])
 
     test.printInfo();
 
+    cout << endl;
+    test.remove(12);
+    test.remove(1);
+    cout << "\nCurrent size: " << test.getSize() << endl;
+    test.printInfo();
+
     return 0;
 }

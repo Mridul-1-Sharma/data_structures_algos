@@ -21,11 +21,13 @@ class arrayList
      
     void insertFront(const T& e);   // insert new head
     void removeFront();             // remove head
+    void remove(const T& e);
 
     void printInfo() const; 
 
  private:
     void resize();               // resize the array when out of size
+    int search (const T& e);
 };
 
 template<typename T>
@@ -54,6 +56,16 @@ T arrayList<T>::head() const
    return arrList[front - 1];
 }
 
+template <typename T>
+int arrayList<T>::search(const T& e)
+{
+   for (int i = front - 1; i >= 0; i--)
+      if (arrList[i] == e)
+         return i;
+
+   return -1;
+}
+
 template<typename T>
 void arrayList<T>::insertFront(const T& e) 
 {
@@ -68,6 +80,23 @@ void arrayList<T>::removeFront()
 {
    front--; 
 }
+
+template<typename T>
+void arrayList<T>::remove(const T& e)
+{
+   int index = search(e);
+
+   if (index == -1)
+       cout << "The element " << e << " is not in the list, so it cannot be removed" << endl;
+   else
+   {
+      for (int i = index; i < front - 1; i++)
+         arrList[i] = arrList[i+1];
+
+      front--;
+   }
+}
+
 
 template<typename T>
 void arrayList<T>::resize() 
