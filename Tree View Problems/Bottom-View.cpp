@@ -38,7 +38,7 @@ Node* buildTree(string s){
 }
 class Solution{
     public:
-    vector<int> topView(Node* root){
+    vector<int> bottomView(Node* root){
         vector<int> v;
         if(root==NULL)return v;
         queue<pair<Node*,pair<int,int>>> q;
@@ -82,7 +82,7 @@ int main(){
         cin>>s;
         Node* root=buildTree(s);
         Solution solve;
-        vector<int> v=solve.topView(root);
+        vector<int> v=solve.bottomView(root);
         for(int x:v){
             cout<<x<<endl;
         }
